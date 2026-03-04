@@ -1,3 +1,19 @@
+# Authors
+
+Mourad Elfaham1, Aya Attia1, Sara Ibrahim Abdelkader2\*, Rahma Alaa Abdelhafez2, Mohammed Ghanem2, Ahmed Azab2, Belgin Ahmed Nagah2, Nour Atif2, Maha Moemen2, Ashraf Nabhan1,3
+
+**Affiliation**
+
+1 Faculty of Medicine, Ain Shams University, Cairo, Egypt.
+
+2 Faculty of Medicine, Galala University, Attaka, Suez, Egypt.
+
+3 Faculty of Medicine, MTI University, Cairo, Egypt.
+
+\*Corresponding author: Sara Ibrahim Abdelkader. Faculty of Medicine, Galala University, Attaka, Suez, Egypt. Email: sara.elzeftawy\@gu.edu.eg, ORCID: 0009-0002-5877-4722
+
+Word count: 2500
+
 # Abstract
 
 Background: Oral GnRH antagonists may improve endometriosis-related pain. The benefits and harms of the available Oral GnRH antagonists require a rigorous synthesis of evidence.
