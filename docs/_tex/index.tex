@@ -1,0 +1,475 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Oral GnRH antogonists for endometriosis-associated pain},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Oral GnRH antogonists for endometriosis-associated pain}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{A systematic review and meta-analysis}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+
+\section{Authors}\label{authors}
+
+Mourad Elfaham1, Aya Attia1, Sara Ibrahim Abdelkader2*, Rahma Alaa
+Abdelhafez2, Mohammed Ghanem2, Ahmed Azab2, Belgin Ahmed Nagah2, Nour
+Atif2, Maha Moemen2, Ashraf Nabhan1,3
+
+\textbf{Affiliation}
+
+1 Faculty of Medicine, Ain Shams University, Cairo, Egypt.
+
+2 Faculty of Medicine, Galala University, Attaka, Suez, Egypt.
+
+3 Faculty of Medicine, MTI University, Cairo, Egypt.
+
+*Corresponding author: Sara Ibrahim Abdelkader. Faculty of Medicine,
+Galala University, Attaka, Suez, Egypt. Email: sara.elzeftawy@gu.edu.eg,
+ORCID: 0009-0002-5877-4722
+
+Word count: 2500
+
+\section{Abstract}\label{abstract}
+
+Background: Oral GnRH antagonists may improve endometriosis-related
+pain. The benefits and harms of the available Oral GnRH antagonists
+require a rigorous synthesis of evidence.
+
+Objectives: To assess the effects of oral GnRH antagonists in women with
+sendometriosis-related pain.
+
+Search strategy: We searched CENTRAL, MEDLINE, Embase, and CINHAL on
+January 6, 2025, using relevant search terms. Clinical trials registries
+were searched for ongoing trials. The search had no language or date
+restrictions.
+
+Selection criteria: We included randomized controlled trials (RCTs)
+comparing oral GnRH antagonists with placebo/no treatment/any
+pharmacological intervention in women with sendometriosis-related pain.
+
+Data collection and analysis: Two authors independently screened trials,
+extracted data, and assessed the risk of bias in included studies using
+Cochrane Risk of Bias tool 2. We used risk ratio (RR) for dichotomous
+outcomes and mean difference (MD) for continuous outcomes, plus their
+95\% confidence intervals (CIs). Pairwise meta-analyses were conducted,
+where two or more studies met methodological criteria for inclusion.
+GRADE approach was used to assess certainty of evidence for the
+pre-specified outcomes.
+
+Main results: We identified \#\# RCTs (\#\#\#\# participants). Five
+studies (882 participants) compared oral GnRH antagonists with placebo.
+OGA significantly achieved amenorrhea (RR 24.54; 95\% CI, 10.82-55.64),
+reduced blood loss, and improved quality of life. The evidence for
+adverse events is uncertain.
+
+Conclusion: Compared with placebo, oral GnRH antagonists significantly
+induces amenorrhea, reduces endometriosis associated pain, and improves
+quality-of-life in women with endometriosis associated pain.
+
+Systematic review registration: Center for Open Science, URL.
+
+keywords: Gonadotropin-Releasing Hormone, Elagolix, Linzagolix,
+Relugolix, Endometriosis, Dysmenorrhea, Quality of Life
+
+\section{Background}\label{background}
+
+Endometriosis, an enigmatic chronic health condition, affects 6-10\% of
+women during their reproductive years. Women usually complains of
+dysmenorrhea, chronic pelvic pain, deep dyspareunia and infertility.
+
+The different types of pain associated with endometriosis can adversely
+affect a woman's quality of life and her work productivity. Health
+service utilization increases to cover diagnostic workup and the
+provision of different lines of interventions.
+
+Initial interventions to relief endometriosis-associated pain include
+nonsteroidal anti-inflammatory drugs, depot medroxy progesterone
+acetate, and Gonadotropin-releasing hormone (GnRH) agonists. Surgery for
+women with symptomatic endometriosis offers an important line of
+treatment at the time of a diagnostic laparoscopy or after an
+insufficient response to medical therapy.
+
+New short-acting nonpeptide oral GnRH antagonists recently emerged as an
+alternative in the management of endometriois-associated pain. Oral GnRH
+antagonists (Elagolix, Relugolix, and Linzagolix) act by suppressing the
+anterior pituitary gonadotropin secretion. GnRH antagonists, as compared
+to GnRH, do not cause an initial stimulation of the anterior pituitary
+gland. Thus, this class does not result in an initial increase in
+symptoms. The oral route would provide an additional advantage over GnRH
+agonists. Oral GnRH antagonist produce a dose-dependent suppression of
+ovarian estrogen production. The potential for Oral GnRH antagonists to
+produce partial suppression at lower doses may decrease
+endometriosis-related pain while avoiding the undesirable hypoestrogenic
+effects like hot flashes, vaginal dryness, and the decrease in bone
+mineral density.
+
+The objective of this study was to assess the benefits and harms of Oral
+GnRH antagonists in women with endometriosis-associated pain.
+
+\section{Methods}\label{methods}
+
+Protocol and registration
+
+This systematic review was conducted following the methodological
+standards of Cochrane Handbook {[}9{]}. We prospectively registered the
+protocol in Open Science Platform (URL). The full text of the protocol
+is available in an open access registry. We reported the review using
+the Preferred Reporting Items for Systematic reviews and Meta-Analyses
+(PRISMA) standards {[}10{]}. The full checklist is available as
+Supplementary File 2.
+
+Eligibility criteria
+
+We included published randomized controlled trials that compared any
+oral GnRH antagonist with no intervention, placebo or any active
+pharmacological intervention in women with endometriosis associated pain
+during the reproductive age, We assesse the followig outcomes:
+non-menstrual pelvic pain, dysmenorrhea, dyspareunia, QOL, additional
+use of analgesics, and adverse events (Any adverse event leading to
+discontinuation, Bone mineral density, Hot flashes, Vaginal dryness).
+The length of follow-up was up to 12 and 24 weeks.
+
+Information sources
+
+A comprehensive literature search was initially conducted on September
+20, 2023, by two authors (AFN, HBA) who are information experts. We did
+not impose language or other restrictions on any of the searches. We
+searched bibliographic databases (Cochrane Central Register of
+Controlled Trials (CENTRAL), MEDLINE/PubMed) and citation indexes (Web
+of Science and Scopus). We included the terms (HELLP Syndrome) AND
+(corticosteroids or glucocorticoids or Dexamethasone or Betamethasone or
+Prednisolone). The search strategy was updated on February 3, 2024, and
+new studies were not identified. The detailed exact strategy adapted for
+each database is provided in Supplementary File 3 and is available as an
+open access registry document. We peer-reviewed the search strategy
+using PRESS checklist {[}11{]}, and further tested it with a set of
+known relevant, `gold standard' reports. We also searched clinical trial
+registries (ClinicalTrials.gov and the World Health Organization
+International Clinical Trials Registry Platform) to identify ongoing
+trials. We finally searched reference lists and explored the cited-by
+logs of identified studies and previously published reviews.
+
+Study selection
+
+All reports identified in the databases were imported to Bibtex library
+using Jabref version 5. After removing duplicates, two authors
+independently screened all titles and abstracts for eligibility. We
+retrieved and assessed the full text of all reports that potentially met
+our eligibility criteria during screening. Two authors (AFK, HBA, MAE,
+RHA) independently assessed each full-text article. Disagreements
+regarding trial eligibility were resolved by consensus and finally
+resolved by a third author (AFN).
+
+Data collection process
+
+For eligible studies, we extracted the data in duplicates using an
+offline electronic form. We resolved discrepancies through discussion.
+Extracted data were transcribed to a spreadsheet and checked for
+accuracy. We contacted authors of the original reports, if needed, to
+provide details regarding unclear or missing data.
+
+Data items
+
+Extracted data included study design, sample size, description of
+included participants, description of the intervention, outcomes, trial
+registration, and funding sources, and country.
+
+Study risk of bias assessment
+
+We assessed the following risk of bias domains as outlined in Cochrane
+Handbook for Systematic Reviews of Interventions: (1) risk of bias
+arising from the randomization process; (2) risk of bias due to
+deviations from the intended interventions (effect of assignment to
+intervention); (3) risk of bias due to missing outcome data; (4) risk of
+bias in measurement of the outcome; and (5) risk of bias in selection of
+the reported result. Each domain was judged as being at ``low risk of
+bias'', ``some concerns'', or ``high risk of bias''. Trials with ``low
+risk of bias'' in all domains were classified as being at overall ``low
+risk of bias''. RCTs with one domain judged to be at ``some concerns'',
+but no domain judged to be at ``high risk of bias'', were classified as
+being at overall ``some concerns'' of risk of bias. RCTs were classified
+as being at overall ``high risk of bias'' if at least one domain was
+judged as being at ``high risk of bias''. However, if a trial was judged
+to be at ``some concerns'' due to risk of bias for multiple domains, it
+was judged as being at overall ``high risk of bias'' if the assessors
+judged that the multiple concerns amounted to a serious risk of bias. In
+case of discrepancies among their judgments and inability to reach
+consensus, we consulted the senior author (AFN) to reach a final
+decision.
+
+Effect measures
+
+For dichotomous data, we presented results as risk ratio (RR) with 95\%
+confidence intervals (CI). For continuous data, we presented results as
+mean diference (MD) with 95\% CI. The unit of analysis was the
+individual participant. Data related to participants reported as not
+compliant was analyzed on an intention-to-treat basis.
+
+Synthesis methods
+
+Common effect meta-analysis was performed to combine data of trials that
+are judged to be sufficiently similar in terms of intervention,
+populations, and methods. We planned to investigate substantial
+statistical heterogeneity, defined as I² statistic ≥ 50\% or
+P \textless{} 0.1.
+
+We performed the planned subgroup analysis by type of antagonist
+(Elagolix, Relugolix, Linzagolix). We assessed subgroup differences by
+interaction tests. Results of the subgroup analyses were reported by
+mentioning the Chi² statistic and P value, and the interaction test I²
+value.
+
+Sensitivity analysis was performed to explore robustness of pooled
+estimate using outcome data from trials with a low risk of bias.
+
+Synthesis was performed using RStudio 2024.12.0 Build 467 (MacOS, Apple
+Silicon version), R 4.4 (2024-12-16) {[}12{]} and R package meta version
+8 {[}13{]}.
+
+Reporting bias assessment
+
+We explored whether the study was included in a trial registry and
+whether a protocol was available. We planned to examine funnel plots to
+assess the potential for publication bias if we found 10 or more studies
+reporting on a particular outcome.
+
+Certainty assessment
+
+We used the Grading of Recommendations, Assessment, Development and
+Evaluation (GRADE) approach to create the Summary of Findings Table
+{[}14{]} Briefly, GRADE uses study limitations, consistency of effect,
+imprecision, indirectness, and publication bias to assess the certainty
+of evidence for each outcome. A summary of the intervention effect and a
+measure of certainty was produced using the GRADE Profiler Guideline
+Development Tool (GRADEpro GDT) software {[}15{]} for the prespecified
+important outcomes: maternal death, pulmonary edema, renal failure,
+dialysis, liver morbidity, need for platelet transfusion, and perinatal
+death. One author (AFN) conducted GRADE assessments and the decisions on
+downgrading. This was discussed for final approval by all authors.
+
+\section{Results}\label{results}
+
+\section{Discussion}\label{discussion}
+
+\section{Conclusions}\label{conclusions}
+
+\section{List of abbreviations}\label{list-of-abbreviations}
+
+If abbreviations are used in the text they should be defined in the text
+at first use, and a list of abbreviations should be provided.
+
+\section{Declarations}\label{declarations}
+
+\subsection{Ethics approval and consent to
+participate}\label{ethics-approval-and-consent-to-participate}
+
+Not applicable.
+
+\subsection{Consent for publication}\label{consent-for-publication}
+
+Not applicable.
+
+\subsection{Availability of data and
+materials}\label{availability-of-data-and-materials}
+
+All data relevant to this study are publicly available. Data, analysis
+script and materials related to this study are publicly available on the
+Open Science Framework at~{[}URL{]}. To facilitate reproducibility, this
+manuscript was written by interleaving regular prose and analysis code
+using R Markdown.
+
+\subsection{Competing interests}\label{competing-interests}
+
+The authors declare no competing interests.
+
+\subsection{Funding}\label{funding}
+
+This research received no specific grant from any funding agency in the
+public, commercial or not-for-profit sectors.
+
+\subsection{Authors' contributions}\label{authors-contributions}
+
+AFN conceived the idea for this review and designed the review methods.
+AFK, HBA coordinated the research activities. MAE, RRA, RHA, MNS, KMH,
+RGE, RHH, MSE, MMA, YME, MYA, MHS contributed to search, screening,
+interpretation of results. All authors collaborated in searching,
+screening, selecting studies, data extraction and synthesis. AFN, AFK,
+HBA wrote the first draft of the manuscript. All authors revised the
+manuscript critically for important intellectual content. All authors
+approved the final version of the manuscript. AFN is the guarantor for
+this manuscript.
+
+\subsection{Acknowledgements}\label{acknowledgements}
+
+\section{References}\label{references}
+
+
+
+
+\end{document}
