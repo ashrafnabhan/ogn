@@ -1,0 +1,26 @@
+project:
+  type: manuscript
+  output-dir: docs
+
+manuscript:
+  article: index.qmd
+
+format:
+  html:
+    comments:
+      hypothesis: true
+  docx: default
+  pdf: default
+
+execute:
+  freeze: true
+
+editor: visual
+
+title: Oral GnRH antogonists for endometriosis-associated pain
+subtitle: A systematic review and meta-analysis
+
+bibliography: references.bib
+
+csl: biomed-central.csl
+
